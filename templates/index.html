@@ -1,0 +1,104 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+  <Title> Shopping Paradise </Title>
+<body>
+  <h1>Shopping Paradise</h1>
+  <h2>Get Attribute Table</h2>
+  <form action="/result", method="post">
+    <select name="tablename">
+      <option value="buyer">Buyer</option>
+      <option value="seller">Seller</option>
+      <option value="person">Person</option>
+      <option value="order">Order</option>
+      <option value="categories">Category</option>
+      <option value="product">Product</option>
+      <option value="shopping_cart">Shopping Cart</option>
+    </select>
+    <br><br>
+    <input type="submit">
+  </form>
+  <h2>Let's find some interesting things</h2>
+  <h3>Select a product to see which category it belongs</h3>
+  <form action="/queryOne", method="post">
+      <select name = "queryOne">
+      {% for item in queryOne%}
+        <option  value={{item.productName}}>{{item.productName}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+
+  <h3>Select a seller’s name and show the products they sell</h3>
+  <form action="/queryTwo", method="post">
+      <select name = "queryTwo">
+      {% for item in queryTwo%}
+        <option  value={{item.sellerName}}>{{item.sellerName}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+  <h3>Select a person and get the total price of goods in his/her shopping cart</h3>
+
+  <form action="/queryThree", method="post">
+      <select name = "queryThree">
+      {% for item in queryThree%}
+        <option  value={{item.buyerName}}>{{item.buyerName}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+  <h3>Select a person and get the total price of goods in his/her shopping cart</h3>
+
+  <form action="/queryThree", method="post">
+      <select name = "queryThree">
+      {% for item in queryThree%}
+        <option  value={{item.buyerName}}>{{item.buyerName}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+  <h3>To see the buyer’s name of xth largest cost order among all the orders and the cost of the order</h3>
+  <form action="/queryFive", method="post">
+      <select name = "queryFive">
+      {% for item in queryFive%}
+        <option  value={{item.count}}>{{item.count}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+  <h3>Count the number of order that contains certain category</h3>
+
+  <form action="/querySix", method="post">
+      <select name = "querySix">
+      {% for item in querySix%}
+        <option  value={{item.category}}>{{item.category}}</option>
+      {% endfor %}
+      </select>
+      <br><br>
+      <input type="submit">
+  </form>
+
+
+
+
+
+</body>
+
+
+</html>
