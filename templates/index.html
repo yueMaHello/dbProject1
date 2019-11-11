@@ -59,10 +59,10 @@
       <input type="submit">
   </form>
 
-  <h3>Select a person and get the total price of goods in his/her shopping cart</h3>
+  <h3>Select a person and see what products are in his/her shopping cart</h3>
 
-  <form action="/queryThree", method="post">
-      <select name = "queryThree">
+  <form action="/queryFour", method="post">
+      <select name = "queryFour">
       {% for item in queryThree%}
         <option  value={{item.buyerName}}>{{item.buyerName}}</option>
       {% endfor %}

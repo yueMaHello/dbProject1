@@ -320,15 +320,15 @@ def search_queryFour():
 
   cursor = g.conn.execute(sqlalchemy.text(queryString))
   results = cursor.fetchall()
-  if not results:
-    # flash('No results found!')
-    return redirect('/')
-  else:
+  # if not results:
+  #   # flash('No results found!')
+  #   return redirect('/')
+  # else:
     # display results
 
-    table = ResultQueryFour(results)
-    table.border = True
-    return render_template('result.html', table=table)
+  table = ResultQueryFour(results)
+  table.border = True
+  return render_template('result.html', table=table)
 
 
 
